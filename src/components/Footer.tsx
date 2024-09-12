@@ -24,7 +24,7 @@ const Footer = () => {
                     class="discord"
                     target="_blank"
                     href={config.discordUrl}>
-                    Discord
+                    Telegram
                 </a>
             </h4>
             <div class="socials">
