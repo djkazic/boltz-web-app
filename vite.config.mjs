@@ -33,6 +33,7 @@ export default defineConfig({
         commonjsOptions: {
             transformMixedEsModules: true,
         },
+        minify: false,
     },
     css: {
         preprocessorOptions: {
