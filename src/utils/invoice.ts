@@ -179,10 +179,10 @@ const checkLnurlResponse = (amount: number, data: LnurlResponse) => {
 };
 
 const fetchLnurlInvoice = async (amount: number, data: LnurlResponse) => {
-    log.debug("fetching invoice", `${data.callback}?amount=${amount}`);
-    const res = await fetch(`${data.callback}?amount=${amount}`).then(
-        checkResponse<LnurlCallbackResponse>,
-    );
+    const separator = data.callback.includes('?') ? '&' : '?';
+    const url = `${data.callback}${separator}amount=${amount}`;
+    log.debug("fetching invoice", url);
+    const res = await fetch(url).then(checkResponse<LnurlCallbackResponse>);
     log.debug("fetched invoice", res);
     return res.pr;
 };
